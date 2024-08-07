@@ -1,0 +1,18 @@
+Makefile
+ftinspect
+*.o
+moc_*.cpp
+moc_*.h
+.qmake.stash
+
+# Visual Studio specific
+out
+.vs
+CMakeSettings.json
+
+# clangd
+/.cache/
+compile_commands.json
+
+# Qt Creator
+CMakeLists.txt.user
