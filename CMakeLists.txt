@@ -78,3 +78,12 @@ else (CMAKE_CXX_COMPILER_ID STREQUAL "GNU"
   target_compile_options(ftinspect
     PRIVATE "-Wall" "-Wextra" "-Wpedantic" "-Wno-unused-parameter")
 endif ()
+
+# auto-generated file containing libraries path, for clangd language server
+if (CMAKE_EXPORT_COMPILE_COMMANDS)
+  execute_process(
+    COMMAND ${CMAKE_COMMAND} -E create_symlink
+    ${CMAKE_BINARY_DIR}/compile_commands.json
+    ${CMAKE_SOURCE_DIR}/compile_commands.json
+)
+endif()
